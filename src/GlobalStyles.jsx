@@ -7,6 +7,11 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     border: none;
   }
+
+  html, body {
+    min-width: 320px;
+    font-size: 16px;
+  }
 `
 
 export default GlobalStyles
