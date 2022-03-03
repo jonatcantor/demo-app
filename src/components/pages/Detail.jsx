@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import BackButton from "../atoms/BackButton"
+import Menu from "../organisms/Menu"
 
 const DetailPage = styled.main`
   display: grid;
@@ -30,6 +31,7 @@ const DetailMovie = styled.section`
 
   & li {
     margin-bottom: 0.25rem;
+    text-align: center;
   }
 `
 
@@ -59,6 +61,7 @@ const Detail = () => {
   return (
     <DetailPage>
       <BackButton />
+      <Menu />
 
       <header>
         <h1>Detail's Movies</h1>

@@ -1,4 +1,7 @@
+import { useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import styled from 'styled-components'
+import Menu from '../organisms/Menu'
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -47,15 +50,23 @@ const ListPage = styled.main`
 `
 
 const List = () => {
+  const [pressed, setPressed] = useState(false)
+
+  if(pressed) {
+    return <Navigate to='/detail/1' />
+  }
+
   return (
     <ListPage>
+      <Menu />
+
       <header>
         <h1>Name's Movies</h1>
         <p>User since Date</p>
       </header>
 
       <MovieList>
-        <Table>
+        <Table onClick={ () => setPressed(true) }>
           <tbody>
             <tr>
               <th>Title</th>
@@ -72,7 +83,7 @@ const List = () => {
           </tbody>
         </Table>
 
-        <Table>
+        <Table onClick={ () => setPressed(true) }>
           <tbody>
             <tr>
               <th>Title</th>

@@ -1,4 +1,5 @@
 import { IoChevronBack } from 'react-icons/io5'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Styles = styled.button`
@@ -9,8 +10,10 @@ const Styles = styled.button`
 `
 
 const BackButton = () => {
+  const navigate = useNavigate()
+
   return (
-    <Styles><IoChevronBack size='2rem' /></Styles>
+    <Styles onClick={ () => navigate(-1) }><IoChevronBack size='2rem' /></Styles>
   )
 }
 
