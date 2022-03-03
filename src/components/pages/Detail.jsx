@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import BackButton from "../atoms/BackButton"
 
 const DetailPage = styled.main`
   display: grid;
@@ -57,6 +58,8 @@ const Characters = styled.section`
 const Detail = () => {
   return (
     <DetailPage>
+      <BackButton />
+
       <header>
         <h1>Detail's Movies</h1>
       </header>
