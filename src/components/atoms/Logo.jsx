@@ -23,7 +23,7 @@ const Styles = styled.div`
 const Logo = () => {
   return (
     <Styles>
-      <img src='./logo300.png' />
+      <img src='./logo300.png' alt='Demo app logo' />
       <h1>Demo APP</h1>
     </Styles>
   )
