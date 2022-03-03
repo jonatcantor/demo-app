@@ -12,6 +12,11 @@ const GlobalStyles = createGlobalStyle`
     min-width: 320px;
     font-size: 16px;
   }
+
+  button {
+    background: none;
+    cursor: pointer;
+  }
 `
 
 export default GlobalStyles
