@@ -1,21 +1,5 @@
 import styled from "styled-components"
-import BackButton from "../atoms/BackButton"
-import Menu from "../organisms/Menu"
-
-const DetailPage = styled.main`
-  display: grid;
-  justify-items: center;
-  row-gap: 3rem;
-
-  & header {
-    margin-top: 3rem;
-  }
-
-  & h1, h2, p {
-    font-size: 1rem;
-    text-align: center;
-  }
-`
+import WithHeader from "../templates/WithHeader"
 
 const DetailMovie = styled.section`
   display: grid;
@@ -59,60 +43,61 @@ const Characters = styled.section`
 
 const Detail = () => {
   return (
-    <DetailPage>
-      <BackButton />
-      <Menu />
-
-      <header>
+    <WithHeader
+      PageHeader={
         <h1>Detail's Movies</h1>
-      </header>
+      }
 
-      <DetailMovie>
-        <div>
-          <h2>Nombre</h2>
-          <p>Nombre de película</p>
-        </div>
+      PageContent={
+        <>
+          <DetailMovie>
+            <div>
+              <h2>Nombre</h2>
+              <p>Nombre de película</p>
+            </div>
 
-        <div>
-          <h2>Director</h2>
-          <p>Director 1</p>
-        </div>
+            <div>
+              <h2>Director</h2>
+              <p>Director 1</p>
+            </div>
 
-        <ul>
-          <h2>Productor</h2>
-          <li>Productor 1</li>
-          <li>Productor 2</li>
-        </ul>
+            <ul>
+              <h2>Productor</h2>
+              <li>Productor 1</li>
+              <li>Productor 2</li>
+            </ul>
 
-        <div>
-          <h2>Opening</h2>
-          <p>Opening 1</p>
-        </div>
-      </DetailMovie>
+            <div>
+              <h2>Opening</h2>
+              <p>Opening 1</p>
+            </div>
+          </DetailMovie>
 
-      <Characters>
-        <h2>Characters</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Homeworld - name</th>
-              <th>hair_color</th>
-              <th>Height</th>
-            </tr>
-          </thead>
+          <Characters>
+            <h2>Characters</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Homeworld - name</th>
+                  <th>hair_color</th>
+                  <th>Height</th>
+                </tr>
+              </thead>
 
-          <tbody>
-            <tr>
-              <td>Nombre 1</td>
-              <td>Homeworld 1</td>
-              <td>hair_color 1</td>
-              <td>Height 1</td>
-            </tr>
-          </tbody>
-        </table>
-      </Characters>
-    </DetailPage>
+              <tbody>
+                <tr>
+                  <td>Nombre 1</td>
+                  <td>Homeworld 1</td>
+                  <td>hair_color 1</td>
+                  <td>Height 1</td>
+                </tr>
+              </tbody>
+            </table>
+          </Characters>
+        </>
+      }
+    />
   )
 }
 

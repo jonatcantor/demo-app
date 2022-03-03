@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import styled from 'styled-components'
-import Menu from '../organisms/Menu'
+import WithHeader from '../templates/WithHeader'
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -34,21 +34,6 @@ const MovieList = styled.ul`
   padding: 1rem 0;
 `
 
-const ListPage = styled.main`
-  display: grid;
-  justify-items: center;
-  row-gap: 3rem;
-
-  & header {
-    margin-top: 3rem;
-  }
-
-  & h1, p {
-    font-size: 1rem;
-    text-align: center;
-  }
-`
-
 const List = () => {
   const [pressed, setPressed] = useState(false)
 
@@ -57,50 +42,52 @@ const List = () => {
   }
 
   return (
-    <ListPage>
-      <Menu />
+    <WithHeader
+      PageHeader={
+        <>
+          <h1>Name's Movies</h1>
+          <p>User since Date</p>
+        </>
+      }
 
-      <header>
-        <h1>Name's Movies</h1>
-        <p>User since Date</p>
-      </header>
+      PageContent={
+        <MovieList>
+          <Table onClick={ () => setPressed(true) }>
+            <tbody>
+              <tr>
+                <th>Title</th>
+                <td>Title 1</td>
+              </tr>
+              <tr>
+                <th>Director</th>
+                <td>Director 1</td>
+              </tr>
+              <tr>
+                <th>Opening</th>
+                <td>Opening 1</td>
+              </tr>
+            </tbody>
+          </Table>
 
-      <MovieList>
-        <Table onClick={ () => setPressed(true) }>
-          <tbody>
-            <tr>
-              <th>Title</th>
-              <td>Title 1</td>
-            </tr>
-            <tr>
-              <th>Director</th>
-              <td>Director 1</td>
-            </tr>
-            <tr>
-              <th>Opening</th>
-              <td>Opening 1</td>
-            </tr>
-          </tbody>
-        </Table>
-
-        <Table onClick={ () => setPressed(true) }>
-          <tbody>
-            <tr>
-              <th>Title</th>
-              <td>Title 2</td>
-            </tr>
-            <tr>
-              <th>Director</th>
-              <td>Director 2</td>
-            </tr>
-            <tr>
-              <th>Opening</th>
-              <td>Opening 2</td>
-            </tr>
-          </tbody>
-        </Table>
-      </MovieList>
-    </ListPage>
+          <Table onClick={ () => setPressed(true) }>
+            <tbody>
+              <tr>
+                <th>Title</th>
+                <td>Title 2</td>
+              </tr>
+              <tr>
+                <th>Director</th>
+                <td>Director 2</td>
+              </tr>
+              <tr>
+                <th>Opening</th>
+                <td>Opening 2</td>
+              </tr>
+            </tbody>
+          </Table>
+        </MovieList>
+      }
+    />
   )
 }
 
