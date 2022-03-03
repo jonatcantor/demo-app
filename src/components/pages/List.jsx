@@ -19,24 +19,6 @@ const Table = styled.table`
   & td:last-child {
     width: 100%;
   }
-
-  & th {
-    border-left: none;
-  }
-
-  & td {
-    border-right: none;
-  }
-
-  & tr:first-child th,
-  & tr:first-child td {
-    border-top: none;
-  }
-
-  & tr:last-child th,
-  & tr:last-child td {
-    border-bottom: none;
-  }
 `
 
 const MovieList = styled.ul`
@@ -46,6 +28,7 @@ const MovieList = styled.ul`
   row-gap: 2rem;
   justify-items: center;
   overflow-x: scroll;
+  padding: 1rem 0;
 `
 
 const ListPage = styled.main`
@@ -67,7 +50,7 @@ const List = () => {
   return (
     <ListPage>
       <header>
-        <h1>Name's Movies:</h1>
+        <h1>Name's Movies</h1>
         <p>User since Date</p>
       </header>
 
